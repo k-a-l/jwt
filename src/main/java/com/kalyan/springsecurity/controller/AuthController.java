@@ -7,7 +7,6 @@ import com.kalyan.springsecurity.repository.UserRepository;
 import com.kalyan.springsecurity.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -78,3 +77,8 @@ public class AuthController {
 
 
 }
+
+
+
+
+
