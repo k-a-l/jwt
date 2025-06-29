@@ -1,0 +1,37 @@
+1️⃣  User sends login request to /auth/login with username & password
+      |
+      ↓
+2️⃣  AuthController receives request
+      |
+      ↓
+3️⃣  AuthController authenticates user using AuthenticationManager
+      |
+      ↓
+4️⃣  CustomUserDetailsService loads user from database
+      |
+      ↓
+5️⃣  If valid, AuthController calls JwtUtil to generate JWT
+      |
+      ↓
+6️⃣  JWT token is returned to the client
+      |
+      ↓
+7️⃣  Client stores JWT (in localStorage or cookies)
+      |
+      ↓
+8️⃣  Client sends JWT in Authorization header for protected routes
+      |
+      ↓
+9️⃣  JwtAuthenticationFilter intercepts request
+      |
+      ↓
+🔟  JwtUtil validates token (checks signature, expiration)
+      |
+      ↓
+1️⃣1️⃣ If valid, create Authentication object with user info
+      |
+      ↓
+1️⃣2️⃣ Set authentication into SecurityContextHolder
+      |
+      ↓
+1️⃣3️⃣ Request is authenticated — controller processes the request
