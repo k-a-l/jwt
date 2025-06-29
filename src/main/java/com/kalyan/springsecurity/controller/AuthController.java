@@ -1,5 +1,6 @@
 package com.kalyan.springsecurity.controller;
 
+import com.kalyan.springsecurity.model.LoginRequest;
 import com.kalyan.springsecurity.utils.JwtUtils;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -20,18 +21,18 @@ public class AuthController {
     private final UserDetailsService customUserDetailsService;
     private final JwtUtils jwtUtils;
 
+
     @PostMapping("/login")
     public ResponseEntity<Map<String, String>> createJwtToken(
-            @RequestParam String username,
-            @RequestParam String password
+            @RequestBody LoginRequest request
     ) {
         // Authenticate user
         authenticationManager.authenticate(
-                new UsernamePasswordAuthenticationToken(username, password)
+                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
         );
 
         // Load user details
-        UserDetails userDetails = customUserDetailsService.loadUserByUsername(username);
+        UserDetails userDetails = customUserDetailsService.loadUserByUsername(request.getUsername());
 
         // Generate token
         String token = jwtUtils.generateToken(userDetails);
