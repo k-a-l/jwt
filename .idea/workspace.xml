@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bcc195a5-19e8-4d65-94a9-08c030d810c2" name="Changes" comment="With Oauth and Jwt">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -130,7 +129,7 @@
       <workItem from="1751175250426" duration="247000" />
       <workItem from="1751175682173" duration="20000" />
       <workItem from="1751175710767" duration="18215000" />
-      <workItem from="1751211436877" duration="15845000" />
+      <workItem from="1751211436877" duration="15880000" />
     </task>
     <task id="LOCAL-00001" summary="Ready to use">
       <option name="closed" value="true" />
@@ -316,7 +315,15 @@
       <option name="project" value="LOCAL" />
       <updated>1751228453852</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="With Oauth and Jwt">
+      <option name="closed" value="true" />
+      <created>1751228704118</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1751228704118</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
