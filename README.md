@@ -176,7 +176,7 @@ src/
     🔗 <a href="https://www.linkedin.com/in/kalyan-katwal">LinkedIn</a> | 💻 #OpenToWork</p>
   </section>
 
- ]
+ 
 
 </body>
 </html>
