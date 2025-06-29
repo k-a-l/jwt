@@ -27,8 +27,7 @@ public class User {
     @Size(min = 5, message = "Username must be at least 2 characters")
     private String username;
 
-    @Column(nullable = false)
-    @NotBlank(message = "Password Required")
+    @Column(nullable = true)
     private String password;
 
     @ElementCollection(fetch = FetchType.EAGER)

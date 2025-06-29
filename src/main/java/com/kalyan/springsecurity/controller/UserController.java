@@ -3,6 +3,7 @@ package com.kalyan.springsecurity.controller;
 import com.kalyan.springsecurity.model.LoginResponse;
 import com.kalyan.springsecurity.model.User;
 import com.kalyan.springsecurity.repository.UserRepository;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -20,7 +21,7 @@ private final UserRepository userRepository;
 private final PasswordEncoder passwordEncoder;
 
     @PostMapping("/register")
-    public ResponseEntity<?> signUp(@RequestBody User user) {
+    public ResponseEntity<?> signUp(@Valid @RequestBody User user) {
         if (userRepository.existsUserByUsername(user.getUsername())) {
             return ResponseEntity.badRequest().body(" Username already exists.");
         }

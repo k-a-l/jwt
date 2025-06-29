@@ -27,11 +27,12 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         return http
                 .authorizeHttpRequests(req -> req
-                        .requestMatchers("/auth/login", "/user/register", "/h2-console/**").permitAll()
+                        .requestMatchers("/auth/**","/oauth2/**", "/user/register", "/h2-console/**").permitAll()
                         .anyRequest().authenticated()
                 )
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class)
-                .formLogin(Customizer.withDefaults())
+                .formLogin(login -> login.defaultSuccessUrl("/auth/basic-success", true))
+                .oauth2Login(oauth -> oauth.defaultSuccessUrl("/auth/oauth-success"))
                 .httpBasic(Customizer.withDefaults())
                 .logout(LogoutConfigurer::permitAll)
                 .csrf(AbstractHttpConfigurer::disable)
